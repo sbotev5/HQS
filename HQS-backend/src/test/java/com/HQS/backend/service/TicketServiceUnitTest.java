@@ -44,7 +44,6 @@ public class TicketServiceUnitTest {
 	void testReadById() {
 		Ticket expected = new Ticket(1L, "t1", "a1", "d1", 1, "sol1");
 		Mockito.when(this.repo.findById(1L)).thenReturn(Optional.of(expected));
-		System.out.println("CHECK THISSS!!!!!!!" + this.service.readById(1L).toString());
 		Assertions.assertThat(this.service.readById(1L)).isEqualTo(expected);
 		// Mockito.verify(this.repo, Mockito.times(1)).findById(1L);
 	}
@@ -58,5 +57,19 @@ public class TicketServiceUnitTest {
 		Mockito.when(this.repo.save(toSave)).thenReturn(saved);
 		Assertions.assertThat(this.service.create(toSave)).isEqualTo(saved);
 		Mockito.verify(this.repo, Mockito.times(1)).save(toSave);
+	}
+
+	@Test
+	@Sql({ "/data.sql" })
+	void testUpdate() {
+		Ticket newValues = new Ticket(1L, "t1_changed", "a1_changed", "d1_changed", 2, "sol1_changed");
+		Ticket existing = new Ticket(1L, "t1", "a1", "d1", 1, "sol1");
+		Ticket updated = new Ticket(1L, newValues.getTitle(), newValues.getAuthor(), newValues.getDescription(),
+				newValues.getUrgency(), newValues.getSolution());
+
+		Mockito.when(this.repo.findById(1L)).thenReturn(Optional.of(existing));
+		Mockito.when(this.repo.save(updated)).thenReturn(updated);
+		Assertions.assertThat(this.service.updateById(1L, newValues)).isEqualTo(updated);
+		Mockito.verify(this.repo, Mockito.times(1)).save(updated);
 	}
 }
