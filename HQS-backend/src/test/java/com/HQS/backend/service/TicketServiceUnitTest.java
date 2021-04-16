@@ -72,4 +72,11 @@ public class TicketServiceUnitTest {
 		Assertions.assertThat(this.service.updateById(1L, newValues)).isEqualTo(updated);
 		Mockito.verify(this.repo, Mockito.times(1)).save(updated);
 	}
+
+	@Test
+	void testDelete() {
+		Mockito.when(this.repo.existsById(1L)).thenReturn(false);
+		Assertions.assertThat(this.service.deleteById(1L)).isTrue();
+		Mockito.verify(this.repo, Mockito.times(1)).existsById(1L);
+	}
 }
