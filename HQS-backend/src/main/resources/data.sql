@@ -1,3 +1,4 @@
+-- Used for test harness with coverage data and for re-initialisation when testing prod app
 CREATE SCHEMA IF NOT EXISTS hqs;
 USE hqs;
 DROP TABLE IF EXISTS hqs.tickets;
