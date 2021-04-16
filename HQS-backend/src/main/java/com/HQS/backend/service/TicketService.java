@@ -47,4 +47,9 @@ public class TicketService {
 		return this.repository.save(toUpdate);
 	}
 
+	public boolean deleteById(long id) {
+		this.repository.deleteById(id);
+		return !this.repository.existsById(id);
+	}
+
 }
