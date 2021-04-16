@@ -84,4 +84,15 @@ public class TicketServiceIntegrationTest {
 
 		assertThat(this.service.create(expected)).isEqualTo(expected);
 	}
+
+	@Test
+	@Sql({ "/data.sql" })
+	void updateTest() {
+		Ticket existing = new Ticket(1L, "t1", "a1", "d1", 1, "sol1");
+		Ticket newValues = new Ticket(1L, "t1", "a1_changed", "d1", 1, "sol1");
+
+		this.repo.save(newValues);
+
+		assertThat(this.service.updateById(1L, newValues)).isEqualTo(newValues).isNotEqualTo(existing);
+	}
 }

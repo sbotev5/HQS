@@ -3,6 +3,8 @@ package com.HQS.backend.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,4 +35,16 @@ public class TicketService {
 	public Ticket create(Ticket ticket) {
 		return this.repository.save(ticket);
 	}
+
+	public Ticket updateById(Long id, Ticket newValues) {
+		Ticket toUpdate = this.repository.findById(id).orElseThrow(EntityNotFoundException::new);
+
+		toUpdate.setAuthor(newValues.getAuthor());
+		toUpdate.setTitle(newValues.getTitle());
+		toUpdate.setDescription(newValues.getDescription());
+		toUpdate.setUrgency(newValues.getUrgency());
+		toUpdate.setSolution(newValues.getSolution());
+		return this.repository.save(toUpdate);
+	}
+
 }
