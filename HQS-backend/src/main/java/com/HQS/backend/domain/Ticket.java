@@ -1,5 +1,7 @@
 package com.HQS.backend.domain;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,13 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "tickets")
 public class Ticket {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 
 	@Column(name = "title")
 	private String title;
@@ -31,14 +35,14 @@ public class Ticket {
 	private String solution;
 
 	@Column(name = "timeCreated")
-	private String timeCreated;
+	@CreationTimestamp
+	private LocalDateTime timeCreated;
 
 	public Ticket() {
 		super();
 	}
 
-	public Ticket(int id, String title, String author, String description, int urgency, String solution,
-			String timeCreated) {
+	public Ticket(Long id, String title, String author, String description, int urgency, String solution) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -46,14 +50,13 @@ public class Ticket {
 		this.urgency = urgency;
 		this.description = description;
 		this.solution = solution;
-		this.timeCreated = timeCreated;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -97,11 +100,11 @@ public class Ticket {
 		this.solution = solution;
 	}
 
-	public String getTimeCreated() {
+	public LocalDateTime getTimeCreated() {
 		return timeCreated;
 	}
 
-	public void setTimeCreated(String timeCreated) {
+	public void setTimeCreated(LocalDateTime timeCreated) {
 		this.timeCreated = timeCreated;
 	}
 
@@ -117,7 +120,7 @@ public class Ticket {
 		int result = 1;
 		result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + id;
+		result = (int) (prime * result + id);
 		result = prime * result + ((solution == null) ? 0 : solution.hashCode());
 		result = prime * result + ((timeCreated == null) ? 0 : timeCreated.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
