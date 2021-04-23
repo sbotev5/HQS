@@ -6,9 +6,9 @@ CREATE TABLE hqs.tickets (
   id BIGINT NOT NULL AUTO_INCREMENT,
   title VARCHAR(45) NOT NULL,
   author VARCHAR(45) NOT NULL,
-  description VARCHAR(45) NOT NULL,
+  description VARCHAR(255) NOT NULL,
   urgency INT,
-  solution VARCHAR(45),
+  solution VARCHAR(255),
   time_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id));
   
