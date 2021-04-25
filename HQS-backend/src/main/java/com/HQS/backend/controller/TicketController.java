@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.HQS.backend.domain.Ticket;
 import com.HQS.backend.service.TicketService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/tickets")
 public class TicketController {
