@@ -22,7 +22,7 @@ How to run locally:
 
 -  Import to Eclipse as a Spring Boot Project
 
-- Build and Run as a Spring Boot applicaiton from "Run as"
+- Build and Run as a Spring Boot application from "Run as"
 
 - For Testing harness and Coverage, from Eclipse click on project and click "Coverage as"
 
