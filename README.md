@@ -4,13 +4,15 @@ For course attendee: Stoyan Botev
 
 Video demonstration links:
 
-- main:
+- main: https://drive.google.com/file/d/12DrzK84rMWJ9ym-sZ1ST1iVdEC4nYtuq/view?usp=sharing
 
-- back-up:
+- back-up: https://filebin.net/05lidmlpnmjwo0in
 
-Accompying frontend repository: https://github.com/sbotev5/HQS-React-frontend
+Please contact if any of the links are inaccessible.
 
-Accompying JIRA project board: https://id.atlassian.com/invite/p/jira-software?id=kSkVxVrbSYmKbKucbkL5xA
+Accompanying frontend repository: https://github.com/sbotev5/HQS-React-frontend
+
+Accompanying JIRA project board: https://id.atlassian.com/invite/p/jira-software?id=kSkVxVrbSYmKbKucbkL5xA
 
 How to run locally:
 
