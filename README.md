@@ -24,5 +24,5 @@ How to run locally:
 
 - Build and Run as a Spring Boot application from "Run as"
 
-- For Testing harness and Coverage, have H2 Database installed and from click to run "Coverage as" from Eclipse project
+- For Testing harness and Coverage, have H2 Database installed and click to run "Coverage as" from Eclipse project
 
