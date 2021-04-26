@@ -16,7 +16,7 @@ Accompanying JIRA project board: https://id.atlassian.com/invite/p/jira-software
 
 How to run locally:
 
-  - Have Eclipse IDE, MySQL Database.
+  - Have Eclipse IDE and MySQL Database installed.
 
 -  Clone git repo and checkout master branch
 
