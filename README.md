@@ -4,7 +4,7 @@ For course attendee: Stoyan Botev
 
 Video demonstration links:
 
-- main (download it locally): https://drive.google.com/file/d/12DrzK84rMWJ9ym-sZ1ST1iVdEC4nYtuq/view?usp=sharing
+- main (download it locally for best quality): https://drive.google.com/file/d/12DrzK84rMWJ9ym-sZ1ST1iVdEC4nYtuq/view?usp=sharing
 
 - back-up: https://filebin.net/05lidmlpnmjwo0in
 
