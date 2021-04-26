@@ -16,7 +16,7 @@ Accompanying JIRA project board: https://id.atlassian.com/invite/p/jira-software
 
 How to run locally:
 
-- Have MySQL installed and Eclipse installed
+  - Have Eclipse IDE, MySQL Database.
 
 -  Clone git repo and checkout master branch
 
@@ -24,5 +24,5 @@ How to run locally:
 
 - Build and Run as a Spring Boot application from "Run as"
 
-- For Testing harness and Coverage, from Eclipse click on project and click "Coverage as"
+- For Testing harness and Coverage, have H2 Database installed and from click to run "Coverage as" from Eclipse project
 
